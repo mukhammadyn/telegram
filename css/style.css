@@ -1,0 +1,19 @@
+/* LOCK MODAL */
+.lock-modal {
+  padding: 0 !important; 
+}
+
+.lock-modal__modal-dialog {
+  max-width: 100%;
+  margin: 0;
+}
+
+.lock-modal__password-input {
+  border: 0;
+  border-bottom: 3px solid var(--primary);
+}
+
+
+.tg-icon {
+  fill: #adadad;
+}
