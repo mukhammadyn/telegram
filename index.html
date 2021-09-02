@@ -52,6 +52,7 @@
 
 
   <!-- MODALS -->
+
   <!-- LOCK MODAL -->
   <section class="lock-modal modal fade" id="lock-modal">
     <h2 class="sr-only">Your telegram password</h2>
@@ -61,10 +62,11 @@
           <div class="row p-4 vh-100 justify-content-center align-items-center">
             <div class="col-10 col-sm-6 col-md-4 col-lg-3">
               <h3 class="mb-3 h5 font-weight-normal text-center text-lg-left">Enter your local passcode</h3>
-              <form class="d-flex flex-column flex-grow-1 mx-2" action="https://echo.htmlacademy.ru" method="POST">
+              <form class="js-lock-modal-form d-flex flex-column flex-grow-1 mx-2" action="https://echo.htmlacademy.ru" method="POST">
                 <div class="form-group mb-4">
                   <label for="lock-password-input">Your passcode</label>
-                  <input class="lock-modal__password-input form-control form-control-lg rounded-0" id="lock-password-input" type="password" name="password" placeholder="Enter your password" required>
+                  <input class="lock-modal__password-input js-lock-modal-password-input form-control form-control-lg rounded-0" id="lock-password-input" type="password" name="password" placeholder="Enter your password" required>
+                  <small class="d-none form-text text-danger js-lock-modal-incorrect-password-notice">Incorrect password</small>
                 </div>
                 <button class="mb-2 btn btn-primary btn-block btn-lg text-uppercase" type="submit">Submit</button>
                 <div class="text-center"><a href="#">Log out</a></div>
