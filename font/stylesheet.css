@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Tahoma';
+    src: url('Tahoma.woff2') format('woff2'),
+        url('Tahoma.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tahoma';
+    src: url('Tahoma-Bold.woff2') format('woff2'),
+        url('Tahoma-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tahoma';
+    src: url('Tahoma.woff2') format('woff2'),
+        url('Tahoma.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tahoma';
+    src: url('Tahoma-Bold.woff2') format('woff2'),
+        url('Tahoma-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
