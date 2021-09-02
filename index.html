@@ -20,7 +20,8 @@
         <h2 class="sr-only">Chats</h2>
         <div class="vh-100 d-flex flex-column overflow-hidden bg-light">
           <header class="d-flex p-2">
-            <button class="btn btn-sm" type="button" aria-label="Toggle menu">
+            <!-- CHATS MENU TOGGLER -->
+            <button class="btn btn-sm" type="button" data-toggle="modal" data-target="#sidebar-modal" aria-label="Toggle menu">
               <svg class="tg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
                 aria-hidden="true">
                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -52,6 +53,118 @@
 
 
   <!-- MODALS -->
+
+  <!-- SIDEBAR-MODAL -->
+  <section class="sidebar-modal modal fade" id="sidebar-modal">
+    <div class="sidebar-modal__dialog modal-dialog p-0">
+      <div class="sidebar-modal__content modal-content d-flex flex-column vh-100 border-0 rounded-0">
+
+        <header class="sidebar-modal__header bg-dark">
+          <!-- SIDEBAR-MODAL-HEADER-TOP -->
+          <div class="d-flex justify-content-between align-items-start p-4">
+            <button class="sidebar-modal__user-img-btn btn rounded-circle p-0 js-sidebar-modal-profiles-toggler" type="button" data-toggle="collapse" data-target="#accounts-collapse">
+              <img class="d-block rounded-circle img-fluid" src="img/boy.jpg" alt="boy" width="50" height="50">
+            </button>
+
+            <a class="sidebar-modal__saved-messages-link btn btn-sm p-1 rounded-circle" href="#saved-messages" data-toggle="tab" aria-label="Go to saved messages">
+              <svg class="d-block img-fluid" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg>
+            </a>
+
+          </div>
+
+          <!-- SIDEBAR-MODAL-PROFILE-INFO-TOGGLER -->
+          <div class="position-relative d-flex justify-content-between align-items-center px-4 py-2 text-white">
+            <div class="flex-grow-1 overflow-hidden">
+              <div class="h6 mb-1 text-truncate">Nurmuhammad Mahmudov</div>
+              <div class="small text-truncate">+998 90 951 80 12</div>
+            </div>
+
+            <button class="sidebar-modal__profiles-toggler btn btn-sm stretched-link js-sidebar-modal-profiles-toggler" type="button" data-toggle="collapse" data-target="#accounts-collapse" aria-label="Toggle profiles menu">
+              <svg class="sidebar-modal__toggle-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path stroke="#ffffff" fill="#ffffff" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"/></svg>
+            </button>
+
+          </div>
+        </header>
+
+        <!-- SIDEBAR-MODAL CONTENT -->
+        <div class="sidebar-modal__content overflow-auto d-flex flex-column flex-grow-1">
+          <div class="collapse" id="accounts-collapse">
+            <div class="actions-list list-group list-group-flush py-2 border-bottom">
+
+              <button class="actions-list__item list-group-item list-group-item-action border-0" type="button" data-toggle="modal" data-target="#new-group-modal">
+                <span class="list-group-item__inner d-flex align-items-center">
+                  <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 13.75c-2.34 0-7 1.17-7 3.5V19h14v-1.75c0-2.33-4.66-3.5-7-3.5zM4.34 17c.84-.58 2.87-1.25 4.66-1.25s3.82.67 4.66 1.25H4.34zM9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm7.04 6.81c1.16.84 1.96 1.96 1.96 3.44V19h4v-1.75c0-2.02-3.5-3.17-5.96-3.44zM15 12c1.93 0 3.5-1.57 3.5-3.5S16.93 5 15 5c-.54 0-1.04.13-1.5.35.63.89 1 1.98 1 3.15s-.37 2.26-1 3.15c.46.22.96.35 1.5.35z"/></svg>
+                  <span class="actions-list__label text-capitalize">Add profile</span>
+                </span>
+              </button>
+              
+            </div> 
+          </div>
+          <!-- SIDEBAR-MODAL LIST -->
+          <div class="actions-list list-group list-group-flush py-2">
+            <button class="actions-list__item list-group-item list-group-item-action border-0" type="button" data-toggle="modal" data-target="#new-group-modal">
+              <span class="list-group-item__inner d-flex align-items-center">
+                <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9 13.75c-2.34 0-7 1.17-7 3.5V19h14v-1.75c0-2.33-4.66-3.5-7-3.5zM4.34 17c.84-.58 2.87-1.25 4.66-1.25s3.82.67 4.66 1.25H4.34zM9 12c1.93 0 3.5-1.57 3.5-3.5S10.93 5 9 5 5.5 6.57 5.5 8.5 7.07 12 9 12zm0-5c.83 0 1.5.67 1.5 1.5S9.83 10 9 10s-1.5-.67-1.5-1.5S8.17 7 9 7zm7.04 6.81c1.16.84 1.96 1.96 1.96 3.44V19h4v-1.75c0-2.02-3.5-3.17-5.96-3.44zM15 12c1.93 0 3.5-1.57 3.5-3.5S16.93 5 15 5c-.54 0-1.04.13-1.5.35.63.89 1 1.98 1 3.15s-.37 2.26-1 3.15c.46.22.96.35 1.5.35z"/></svg>
+                <span class="actions-list__label text-capitalize">New group</span>
+              </span>
+            </button>
+
+            <button class="actions-list__item list-group-item list-group-item-action border-0" type="button" data-toggle="modal" data-target="#new-group-modal">
+              <span class="list-group-item__inner d-flex align-items-center">
+                <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18 11v2h4v-2h-4zM16 17.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61zM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.99.74-2.24 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.96-.72 2.21-1.65 3.2-2.4zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4zm5.03 1.71L11 9.53v4.94l-1.97-1.18-.48-.29H4v-2h4.55l.48-.29zM15.5 12c0-1.33-.58-2.53-1.5-3.35v6.69c.92-.81 1.5-2.01 1.5-3.34z"/></svg>
+                <span class="actions-list__label text-capitalize">New channel</span>
+              </span>
+            </button>
+
+            <button class="actions-list__item list-group-item list-group-item-action border-0" type="button" data-toggle="modal" data-target="#new-group-modal">
+              <span class="list-group-item__inner d-flex align-items-center">
+                <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 5.9a2.1 2.1 0 110 4.2 2.1 2.1 0 010-4.2m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"/></svg>
+                <span class="actions-list__label text-capitalize">Contcts</span>
+              </span>
+            </button>
+
+            <button class="actions-list__item list-group-item list-group-item-action border-0" type="button" data-toggle="modal" data-target="#new-group-modal">
+              <span class="list-group-item__inner d-flex align-items-center">
+                <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79h1.51m9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75l1.2-1.19M7.5 3H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1-1.24 0-2.45-.2-3.57-.57a.84.84 0 00-.31-.05c-.26 0-.51.1-.71.29l-2.2 2.2a15.149 15.149 0 01-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 018.5 4c0-.55-.45-1-1-1z"/></svg>
+                <span class="actions-list__label text-capitalize">Calls</span>
+              </span>
+            </button>
+
+            <button class="actions-list__item list-group-item list-group-item-action border-0" type="button" data-toggle="modal" data-target="#new-group-modal">
+              <span class="list-group-item__inner d-flex align-items-center">
+                <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19.43 12.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.09-.16-.26-.25-.44-.25-.06 0-.12.01-.17.03l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.06-.02-.12-.03-.18-.03-.17 0-.34.09-.43.25l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.09.16.26.25.44.25.06 0 .12-.01.17-.03l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.06.02.12.03.18.03.17 0 .34-.09.43-.25l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zm-1.98-1.71c.04.31.05.52.05.73 0 .21-.02.43-.05.73l-.14 1.13.89.7 1.08.84-.7 1.21-1.27-.51-1.04-.42-.9.68c-.43.32-.84.56-1.25.73l-1.06.43-.16 1.13-.2 1.35h-1.4l-.19-1.35-.16-1.13-1.06-.43c-.43-.18-.83-.41-1.23-.71l-.91-.7-1.06.43-1.27.51-.7-1.21 1.08-.84.89-.7-.14-1.13c-.03-.31-.05-.54-.05-.74s.02-.43.05-.73l.14-1.13-.89-.7-1.08-.84.7-1.21 1.27.51 1.04.42.9-.68c.43-.32.84-.56 1.25-.73l1.06-.43.16-1.13.2-1.35h1.39l.19 1.35.16 1.13 1.06.43c.43.18.83.41 1.23.71l.91.7 1.06-.43 1.27-.51.7 1.21-1.07.85-.89.7.14 1.13zM12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                <span class="actions-list__label text-capitalize">Settings</span>
+              </span>
+            </button>
+
+            <div class="actions-list__item list-group-item list-group-item-action border-0">
+              <span class="actions-list__item-inner d-flex align-items-center">
+                <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M9.37 5.51A7.35 7.35 0 009.1 7.5c0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27A7.014 7.014 0 0112 19c-3.86 0-7-3.14-7-7 0-2.93 1.81-5.45 4.37-6.49zM12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+                <span class="actions-list__label text-capitalize d-flex justify-content-between align-items-center flex-grow-1">Dark mode
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="dark-mode-switch" name="dark-mode">
+                    <label class="custom-control-label" for="dark-mode-switch"></label>
+                  </div>
+                </span>
+                <label class="stretched-link" for="dark-mode-switch"></label>
+              </span>
+
+            </div>
+          </div>
+
+          <!-- SITEBAR-MODAL FOOTER -->
+          <footer class="sitebar-modal__footer p-4 mt-auto">
+            <div>
+              <a class="font-weight-bold text-black-50" target="_blank" href="#">Telegram desktop</a>
+            </div>
+            <div class="text-black-50">
+              <a class="text-black-50" target="_blank" href="#">Version 3.0</a> - <a class="text-black-50" target="_blank" href="#">About</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- LOCK MODAL -->
   <section class="lock-modal modal fade" id="lock-modal">

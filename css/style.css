@@ -1,3 +1,44 @@
+/* SIDEBAR-MODAL */
+.sidebar-modal {
+  padding: 0 !important; 
+}
+
+.sidebar-modal.fade .sidebar-modal__dialog {
+  margin: 0;
+  transform: translateX(-100%);
+}
+
+.sidebar-modal.show .sidebar-modal__dialog {
+  transform: translateX(0);
+}
+
+.sidebar-modal__user-img-btn.focus,
+.sidebar-modal__user-img-btn:focus,
+.sidebar-modal__saved-messages-link:focus,
+.sidebar-modal__profiles-toggler:focus {
+  box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
+}
+
+
+.sidebar-modal__saved-messages-link {
+  background: rgba(39, 135, 170, 0.6);
+}
+
+.sidebar-modal__toggle-icon {
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-modal__toggle-icon--open {
+  transform: rotate(180deg);
+}
+
+
+/* ACTIONS LIST */
+.actions-list__item, .actions-list__item .stretched-link {
+  cursor: pointer;
+}
+
+
 /* LOCK MODAL */
 .lock-modal {
   padding: 0 !important; 
@@ -16,4 +57,27 @@
 
 .tg-icon {
   fill: #adadad;
+}
+
+
+@media (min-width: 768px) {
+  /* SIDEBAR-MODAL */
+  .sidebar-modal__dialog {
+    max-width: 41.666667%;
+  }
+}
+
+
+@media (min-width: 992px) {
+  /* SIDEBAR-MODAL */
+  .sidebar-modal__dialog {
+    max-width: 25%;
+  }
+}
+
+@media (min-width: 1250px) {
+  /* SIDEBAR-MODAL */
+  .sidebar-modal__dialog {
+    max-width: 20%;
+  }
 }
