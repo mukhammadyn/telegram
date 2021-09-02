@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="h-100" lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,12 +9,77 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  
+
+<body class="h-100 d-flex flex-column">
+
+  <main class="flex-grow-1">
+    <h1 class="sr-only">Telegram Clone</h1>
+    <div class="row no-gutters">
+      <!-- CHATS -->
+      <section class="chats col-md-5 col-lg-3">
+        <h2 class="sr-only">Chats</h2>
+        <div class="vh-100 d-flex flex-column overflow-hidden bg-light">
+          <header class="d-flex p-2">
+            <button class="btn btn-sm" type="button" aria-label="Toggle menu">
+              <svg class="tg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                aria-hidden="true">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+              </svg>
+            </button>
+            <form class="d-flex flex-column flex-grow-1 mx-2" action="https://echo.htmlacademy.ru" method="GET">
+              <input class="form-control form-control-sm flex-grow-1" type="search" name="search" autofocus
+                aria-label="Search" placeholder="Search" required>
+            </form>
+            <button class="btn btn-sm" type="button" aria-label="Lock" data-toggle="modal" data-target="#lock-modal">
+              <svg class="tg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
+                aria-hidden="true">
+                <path d="M0 0h24v24H0V0z" fill="none" />
+                <path
+                  d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h2c0-1.66 1.34-3 3-3s3 1.34 3 3v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z" />
+              </svg>
+            </button>
+          </header>
+        </div>
+      </section>
+      <!-- CHAT -->
+      <section class="d-none d-md-block col-md-7 col-lg-6"></section>
+      <!-- RACTIONS -->
+      <section class="d-none d-lg-block col-lg-3"></section>
+    </div>
+  </main>
+
+
+
+  <!-- MODALS -->
+  <!-- LOCK MODAL -->
+  <section class="lock-modal modal fade" id="lock-modal">
+    <h2 class="sr-only">Your telegram password</h2>
+    <div class="lock-modal__modal-dialog modal-dialog">
+      <div class="modal-content border-0 rounded-0">
+        <div class="modal-body p-0">
+          <div class="row p-4 vh-100 justify-content-center align-items-center">
+            <div class="col-10 col-sm-6 col-md-4 col-lg-3">
+              <h3 class="mb-3 h5 font-weight-normal text-center text-lg-left">Enter your local passcode</h3>
+              <form class="d-flex flex-column flex-grow-1 mx-2" action="https://echo.htmlacademy.ru" method="POST">
+                <div class="form-group mb-4">
+                  <label for="lock-password-input">Your passcode</label>
+                  <input class="lock-modal__password-input form-control form-control-lg rounded-0" id="lock-password-input" type="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button class="mb-2 btn btn-primary btn-block btn-lg text-uppercase" type="submit">Submit</button>
+                <div class="text-center"><a href="#">Log out</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
