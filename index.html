@@ -10,20 +10,20 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="h-100 d-flex flex-column">
+<body class="telegram-chat h-100 d-flex flex-column">
 
   <main class="flex-grow-1">
     <h1 class="sr-only">Telegram Clone</h1>
     <div class="row no-gutters">
       <!-- CHATS -->
-      <section class="chats col-md-5 col-lg-3">
+      <section class="chats col-md-5 col-lg-4 col-xl-3">
         <h2 class="sr-only">Chats</h2>
         <div class="vh-100 d-flex flex-column overflow-hidden">
           <!-- CHATS TOP -->
-          <header class="d-flex mb-1 p-2">
+          <header class="chats__header d-flex px-2 pt-2 pb-3">
             <!-- CHATS MENU TOGGLER -->
-            <button class="btn btn-sm chats__sidebar-toggler-btn" type="button" data-toggle="modal" data-target="#sidebar-modal"
-              aria-label="Toggle menu">
+            <button class="btn btn-sm chats__sidebar-toggler-btn" type="button" data-toggle="modal"
+              data-target="#sidebar-modal" aria-label="Toggle menu">
               <svg class="tg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
                 aria-hidden="true">
                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -31,10 +31,11 @@
               </svg>
             </button>
             <form class="d-flex flex-column flex-grow-1 mx-2" action="https://echo.htmlacademy.ru" method="GET">
-              <input class="chats__search-input form-control form-control-sm flex-grow-1 border-0" type="search"
-                name="search" autofocus aria-label="Search" placeholder="Search" required>
+              <input class="chats__search-input form-control form-control-sm flex-grow-1 border-0" id="form-search"
+                type="search" name="search" autofocus aria-label="Search" placeholder="Search" required>
             </form>
-            <button class="btn btn-sm chats__lock-btn" type="button" aria-label="Lock" data-toggle="modal" data-target="#lock-modal">
+            <button class="btn btn-sm chats__lock-btn" type="button" aria-label="Lock" data-toggle="modal"
+              data-target="#lock-modal">
               <svg class="tg-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"
                 aria-hidden="true">
                 <path d="M0 0h24v24H0V0z" fill="none" />
@@ -44,7 +45,7 @@
             </button>
           </header>
           <!-- CHATS LIST -->
-          <div class="chats__list list-group list-group-flush">
+          <div class="chats__list list-group list-group-flush mt-1">
 
             <!-- CHATS ITEM -->
             <a class="chats__item chats__item--channel list-group-item list-group-item-action d-flex align-items-center overflow-hidden border-0"
@@ -61,7 +62,7 @@
                       <path
                         d="M18 11v2h4v-2h-4zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.4-.4.54-.8 1.08-1.2 1.61zM20.4 5.6c-.4-.53-.8-1.07-1.2-1.6-.99.74-2.24 1.68-3.2 2.4.4.53.8 1.07 1.2 1.6.96-.72 2.21-1.65 3.2-2.4zM4 9c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h1v4h2v-4h1l5 3V6L8 9H4zm11.5 3c0-1.33-.58-2.53-1.5-3.35v6.69c.92-.81 1.5-2.01 1.5-3.34z" />
                     </svg>
-                    <span class="chats__item-chat-title text-truncate text-dark">Nurmuhammad
+                    <span class="chats__item-chat-title text-truncate text-dark flex-grow-1">Nurmuhammad
                       Mahmudov</span>
                   </h3>
                   <svg class="chats__item-sended-icon mr-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" height="20"
@@ -84,15 +85,59 @@
               </div>
             </a>
 
-            
+
 
           </div>
         </div>
       </section>
       <!-- CHAT -->
-      <section class="d-none d-md-block col-md-7 col-lg-6"></section>
+      <section class="d-none d-md-block col-md-7 col-lg-5 col-xl-6">
+        <div class="tab-content">
+          <!-- NURMUHAMMAD MAHMUDOV TAB PANE -->
+          <div class="tab-pane fade show active" id="nurmuhammad_mahmudov">
+            <div class="chat d-flex flex-column vh-100">
+              <!-- CHAT HEADER -->
+              <header class="chat__header d-flex align-items-center p-2">
+                <div class="chat__header-info flex-grow-1 position-relative">
+                  <h3 class="mb-1 h6">Nurmuhammad Mahmudov</h3>
+                  <div class="d-flex">
+                    <div class="chat__header-status small">66 subscribers</div>
+                    <button class="chat__header-info-btn stretched-link" type="button" data-toggle="modal"></button>
+                  </div>
+                </div>
+                <a class="btn btn-sm" aria-label="Search" href="#form-search">
+                  <img class="chat__header-icon" src="img/icon/search-icon.svg" alt="" width="24" height="24">
+                </a>
+                <button class="btn btn-sm position-relative" type="button" data-toggle="modal" data-target="#voice-modal">
+                  <img src="img/icon/chat-bubble.svg" alt="" width="24" height="24">
+                  <img class="position-absolute chat__header-voice-icon" src="img/icon/graphic-eq.svg" alt="" width="17" height="17">
+                </button>
+                <div class="dropdown">
+                  <button class="btn btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-label="Dropdown">
+                    <img class="chat__header-icon" src="img/icon/menu-dots.svg" alt="" width="24" height="24">
+                  </button>
+
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#">View channel info</a>
+                    <a class="dropdown-item" href="#">Disable notifications</a>
+                    <a class="dropdown-item" href="#">View discussion</a>
+                    <a class="dropdown-item" href="#">Manage channel</a>
+                    <a class="dropdown-item" href="#">Add users</a>
+                    <a class="dropdown-item" href="#">Create poll</a>
+                    <a class="dropdown-item" href="#">Export channel history</a>
+                    <a class="dropdown-item" href="#">Leave channel</a>
+                    <a class="dropdown-item" href="#">Clear history</a>
+                  </div>
+                </div>
+              </header>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- RACTIONS -->
-      <section class="d-none d-lg-block col-lg-3"></section>
+      <section class="d-none d-lg-block col-lg-3">
+        <h2 class="sr-only">Emojies</h2>
+      </section>
     </div>
   </main>
 
@@ -102,6 +147,7 @@
 
   <!-- SIDEBAR-MODAL -->
   <section class="sidebar-modal modal fade" id="sidebar-modal">
+    <h2 class="sr-only">Sidebar</h2>
     <div class="sidebar-modal__dialog modal-dialog p-0">
       <div class="sidebar-modal__content modal-content d-flex flex-column vh-100 border-0 rounded-0">
 
@@ -153,19 +199,19 @@
                   <span class="position-relative mr-3">
                     <img class="d-block img-fluid rounded-circle" src="img/boy.jpg" alt="user-img" width="35"
                       height="35">
-                    <svg class="checked-account-icon position-absolute"
-                      xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#419fd9">
+                    <svg class="checked-account-icon position-absolute" xmlns="http://www.w3.org/2000/svg" height="20"
+                      viewBox="0 0 24 24" width="20" fill="#419fd9">
                       <path d="M0 0h24v24H0z" fill="none" />
                       <path
                         d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
                   </span>
                   <span class="actions-list__label text-capitalize text-truncate tg-font">Nurmuhammad Mahmudov</span>
-                </span> 
+                </span>
               </a>
 
               <button class="actions-list__item list-group-item list-group-item-action border-0 tg-font" type="button"
-                data-toggle="modal" data-target="#new-group-modal"> 
+                data-toggle="modal" data-target="#new-group-modal">
                 <span class="list-group-item__inner d-flex align-items-center">
                   <svg class="tg-icon mr-4" xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 0 24 24"
                     width="30" fill="#000000">
@@ -246,35 +292,36 @@
             </button>
 
             <div class="actions-list__item list-group-item list-group-item-action border-0 tg-font">
-              <span class="actions-list__item-inner d-flex align-items-center">
+              <div class="actions-list__item-inner d-flex align-items-center">
                 <svg class="tg-icon mr-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="24"
                   viewBox="0 0 24 24" width="24">
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path
                     d="M9.37 5.51A7.35 7.35 0 009.1 7.5c0 4.08 3.32 7.4 7.4 7.4.68 0 1.35-.09 1.99-.27A7.014 7.014 0 0112 19c-3.86 0-7-3.14-7-7 0-2.93 1.81-5.45 4.37-6.49zM12 3a9 9 0 109 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 01-4.4 2.26 5.403 5.403 0 01-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" />
                 </svg>
-                <span
-                  class="actions-list__label text-capitalize d-flex justify-content-between align-items-center flex-grow-1">Dark
+                <div
+                  class="actions-list__label text-capitalize d-flex justify-content-between align-items-center flex-grow-1">
+                  Dark
                   mode
                   <div class="custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="dark-mode-switch" name="dark-mode">
                     <label class="custom-control-label" for="dark-mode-switch"></label>
                   </div>
-                </span>
+                </div>
                 <label class="stretched-link" for="dark-mode-switch"></label>
-              </span>
+              </div>
 
             </div>
           </div>
 
-          <!-- SITEBAR-MODAL FOOTER -->
-          <footer class="sitebar-modal__footer p-4 mt-auto">
+          <!-- SIDEBAR-MODAL FOOTER -->
+          <footer class="sidebar-modal__footer p-4 mt-auto">
             <div>
-              <a class="sitebar-modal__tg-text text-black-50" target="_blank" href="#">Telegram desktop</a>
+              <a class="sidebar-modal__tg-text text-black-50" target="_blank" href="#">Telegram desktop</a>
             </div>
             <div class="text-black-50">
-              <a class="text-black-50 sitebar-modal__about-text" target="_blank" href="#">Version 3.0</a> - <a class="text-black-50 sitebar-modal__about-text"
-                target="_blank" href="#">About</a>
+              <a class="text-black-50 sidebar-modal__about-text" target="_blank" href="#">Version 3.0</a> - <a
+                class="text-black-50 sidebar-modal__about-text" target="_blank" href="#">About</a>
             </div>
           </footer>
         </div>
@@ -310,6 +357,72 @@
       </div>
     </div>
   </section>
+
+  <!-- VOICE CHAT MODAL -->
+  <div class="modal fade voice-modal" id="voice-modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog voice-modal__dialog">
+      <div class="modal-content voice-modal__content mx-auto">
+        <div class="modal-header voice-modal__header d-flex flex-column px-4 pt-4 pb-1 border-0">
+          <h4 class="modal-title voice-modal__title mb-3 h5" id="voice-modalLabel">Start voice chat as...</h4>
+          <p>Choose whether you want to be displayed as your personal account or as your channel.</p>
+        </div>
+        <div class="modal-body voice-modal__body p-0">
+          <ul class="modal-body__list list-unstyled mb-0 overflow-auto pb-2">
+            <li class="modal-body__item"><a
+                class="modal-body__item-inner modal-body__item-inner--active js-choose-user-account d-flex align-items-center px-4 py-2 text-decoration-none text-dark modal-body__user"
+                href="#">
+                <div class="modal-body__img-wrapper position-relative mr-3 rounded-circle">
+                  <img class="modal-body__img position-absolute rounded-circle" src="img/boy.jpg" alt="child" width="43"
+                    height="43">
+                </div>
+                <div class="d-flex flex-column">
+                  <p class="modal-body__item-title m-0">Nurmuhammad Mahmudov</p>
+                  <p class="modal-body__item-info m-0">personal account</p>
+                </div>
+              </a></li>
+            <li class="modal-body__item"><a
+                class="modal-body__item-inner js-choose-user-account d-flex align-items-center px-4 py-2 text-decoration-none text-dark modal-body__user"
+                href="#">
+                <div class="modal-body__img-wrapper position-relative mr-3 rounded-circle">
+                  <img class="modal-body__img position-absolute rounded-circle" src="img/nashid-channel.jpg"
+                    alt="nashid channel" width="43" height="43">
+                </div>
+                <div class="d-flex flex-column">
+                  <p class="modal-body__item-title m-0">Nashid</p>
+                  <p class="modal-body__item-info m-0">14 subscribers</p>
+                </div>
+              </a></li>
+
+            <li class="modal-body__item"><a
+                class="modal-body__item-inner js-choose-user-account d-flex align-items-center px-4 py-2 text-decoration-none text-dark modal-body__user"
+                href="#">
+                <div class="modal-body__img-wrapper position-relative mr-3 rounded-circle">
+                  <img class="modal-body__img position-absolute rounded-circle" src="img/shogird-tilidan.jpg"
+                    alt="Shogird tilidan channel" width="43" height="43">
+                </div>
+                <div class="d-flex flex-column">
+                  <p class="modal-body__item-title m-0">Nurmuhammad Mahmudov</p>
+                  <p class="modal-body__item-info m-0">69 subscribers</p>
+                </div>
+              </a></li>
+          </ul>
+        </div>
+        <div class="modal-footer voice-modal__footer d-block px-4 pt-0 pb-3 border-0">
+          <div class="m-0 p-0 pb-3">
+            <span class="m-0">You can also <a class="voice-modal__footer-link" href="#">schedule a live
+                stream</a>.</span>
+          </div>
+          <div class="d-flex justify-content-end align-items-center m-0">
+            <button type="button"
+              class="voice-modal__footer-btn mr-4 p-0 border-0 bg-transparent text-uppercase text-primary"
+              data-dismiss="modal">Cansel</button>
+            <button type="button"
+              class="voice-modal__footer-btn p-0 border-0 bg-transparent btn-primary text-uppercase text-primary">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
   <script src="js/jquery-3.6.0.min.js"></script>

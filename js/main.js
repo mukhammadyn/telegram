@@ -10,6 +10,20 @@ let elLockModalForm = elLockModal.querySelector('.js-lock-modal-form');
 let elLockModalPassword = elLockModalForm.querySelector('.js-lock-modal-password-input');   
 let elLockModalIncorrectPasswordNotice = elLockModalForm.querySelector('.js-lock-modal-incorrect-password-notice');
 
+// VOICE CHAT MODAL
+let elsUserAccountJs = document.querySelectorAll('.js-choose-user-account');
+
+if(elsUserAccountJs.length > 0) {
+  elsUserAccountJs.forEach(function (link) {
+    link.addEventListener('click', function() {
+      elsUserAccountJs.forEach(function(elclass) {
+        elclass.classList.remove('modal-body__item-inner--active');
+      });
+      link.classList.add('modal-body__item-inner--active');
+    });
+  });
+}
+
 
 // SIDEMAR MODAL
 if(elsSidebarModalProfilesToggler.length > 0) {
