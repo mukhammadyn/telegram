@@ -101,9 +101,59 @@ body {
   fill: #fff;
 }
 
+.chats__item--channel .chats__item-icon--channel {
+  display: block;
+}
+
+.chats__item--unread .chats__item-badge {
+  display: block;
+}
+
+.chats__item--unread .chats__item-pin {
+  display: none;
+}
+
+.chats__item--pined .chats__item-pin {
+  display: block;
+}
+
+.chats__item--archive .chats__item-sended-icon,
+.chats__item--archive .chats__item-datetime {
+  display: none;
+}
+
+.chats__item-img-wrapper {
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 35px 35px;
+}
+
+.chats__item-img-wrapper--archived-chats {
+  background-color: #bbb;
+  background-image: url(../img/icon/archived-tg.svg);
+}
+
+.chats__item-img-wrapper--saved-messages {
+  background-color: #65aadd;
+  background-image: url(../img/icon/saved-meassagw-white.svg);
+}
+
+.chats__item-datetime {
+  font-size: 12px;
+}
+
 .chats__item-badge {
+  display: none;
+  font-size: 13px;
+  font-weight: normal;
   background-color: rgb(158, 158, 158)!important;
 } 
+
+.chats__item-pin {
+  display: none;
+}
 
 .chats__item.active .chats__item-badge {
   color: #419fd9 !important;
@@ -111,6 +161,7 @@ body {
 }
 
 .chats__item-icon {
+  display: none;
   fill: #000;
 }
 
@@ -121,6 +172,10 @@ body {
 
 
 /* CHAT */
+.chat {
+  max-height: 100vh;
+}
+
 .chat__header {
   box-shadow: 0px 3px 2px -2px rgba(173,173,173,1);
 -webkit-box-shadow: 0px 3px 2px -2px rgba(173,173,173,1);
@@ -149,6 +204,131 @@ body {
 .chat__header-voice-icon {
   top: 6px;
   left: 12px;
+}
+
+/* CHAT MAIN */
+.chat__main {
+  background-image: url(../img/max-van-den-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* DIALOG */
+.dialog {
+  color: #222;
+}
+
+.dialog__item {
+  max-width: 335px;
+}
+
+.dialog__item--channel .dialog__item-img {
+  display: none;
+}
+
+.dialog__item--channel .dialog__content-wrapper {
+  margin-left: 8px;
+}
+
+.dialog__item--sent .dialog__content-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dialog__item--accepted {
+  flex-direction: row-reverse;
+  margin-left: auto;
+}
+
+.dialog__item--accepted .dialog__content-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.dialog__item--accepted .dialog__content-wrapper::before {
+  order: 2;
+  margin-right: 0;
+  margin-left: -15px;
+}
+
+.dialog__content-wrapper {
+  box-shadow: -1px 10px 16px -17px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -1px 10px 16px -17px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 10px 16px -17px rgba(0,0,0,0.75);
+}
+
+.dialog__content-wrapper::before {
+  margin-right: -15px;
+  border-top: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+  border-left: 12px solid transparent;
+  border-radius: 4px;
+  content: '';
+}
+
+.dialog__item--accepted .dialog__content-wrapper::before {
+  border-bottom: 12px solid #effdde;
+}
+
+/* .dialog__item--accepted .dialog__content-wrapper {
+  margin-right: 8px;
+} */
+
+.dialog__content {
+  background-color: #fff;
+  border-radius: 9px;
+}
+
+.dialog__item--accepted .dialog__content {
+  background-color: #effdde;
+}
+
+.dialog__item--accepted .dialog__item-img {
+  margin-left: 0 !important;
+  margin-right: 13px;
+}
+
+.dialog__item--sent .dialog__sended-icon {
+  display: none;
+}
+
+/* .dialog__item--accepted .dialog__content-wrapper::after {
+  margin-right: -12px;
+  border-top: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid #fff;
+  border-left: 12px solid transparent;
+  content: '';
+} */
+
+.dialog__title {
+  color: #1891df;
+}
+
+.dialog__item--accepted .dialog__title {
+  display: none;
+}
+
+.dialog__text {
+  line-height: 20px;
+}
+
+.dialog__seen-time {
+  color: #bbb;
+}
+
+.dialog__item--accepted .dialog__seen {
+  display: none !important;
+}
+
+.dialog__item--chat .dialog__seen {
+  display: none !important;
+}
+
+.dialog__item--accepted .dialog__time {
+  color: #73c56b;
 }
 
 /* VOICE MODAL */
@@ -228,6 +408,40 @@ body {
 .voice-modal__footer-btn {
   color: #419fd9 !important;
   font-size: 15px;
+}
+
+/* CHAT INFO MODAL */
+.modal-info__dialog {
+  max-width: 430px;
+}
+
+.modal-info__status {
+  color: #bbb;
+}
+
+.modal-info__content {
+  background-color: #f1f1f1;
+}
+
+.modal-info__link {
+  line-height: 10px;
+  color: #39c0f4;
+}
+
+.modal-info__info-wrapper {
+  border-bottom: 1px solid #dadada;
+}
+
+.modal-info__info {
+  line-height: 25px;
+}
+
+.modal-info__link-text {
+  color: #bbb;
+}
+
+.modal-info__chat-link {
+  color: #419fd9;
 }
 
 
